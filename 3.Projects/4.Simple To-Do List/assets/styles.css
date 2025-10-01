@@ -1,0 +1,69 @@
+/* Custom styles layered over Tailwind utilities */
+
+:root { --ring: rgba(59, 130, 246, 0.35); }
+
+.glass-panel {
+    background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.65));
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+    backdrop-filter: blur(10px);
+}
+.dark .glass-panel {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.45));
+    border-color: rgba(255,255,255,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.input {
+    padding: 0.75rem 1rem; /* px-4 py-3 */
+    border-radius: 0.75rem; /* rounded-xl */
+    background: rgba(255, 255, 255, 0.8); /* bg-white/80 */
+    border: 1px solid rgba(226, 232, 240, 0.7); /* border-slate-200/70 */
+    color: #0f172a; /* text-slate-800 */
+    outline: none;
+    box-shadow: 0 1px 2px rgba(2, 6, 23, 0.05); /* shadow-sm */
+    transition: box-shadow 150ms, border-color 150ms, background-color 150ms, color 150ms;
+}
+.input::placeholder { color: #94a3b8; /* placeholder-slate-400 */ }
+.input:focus {
+    border-color: #60a5fa; /* border-brand-400 */
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.20); /* focus:ring-4 brand */
+}
+.dark .input {
+    background: rgba(255, 255, 255, 0.10); /* dark:bg-white/10 */
+    border-color: rgba(255, 255, 255, 0.10); /* dark:border-white/10 */
+    color: #f1f5f9; /* dark:text-slate-100 */
+}
+.dark .input::placeholder { color: #64748b; /* dark:placeholder-slate-500 */ }
+
+.btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-white bg-gradient-to-br from-brand-500 to-emerald-500 shadow-lg shadow-brand-500/25 hover:shadow-xl hover:brightness-105 active:brightness-95 transition;
+}
+
+.btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-white/60 dark:bg-white/5 border border-slate-200/60 dark:border-white/10 hover:bg-white/80 dark:hover:bg-white/10 transition;
+}
+
+.chip {
+    @apply inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-white/60 dark:bg-white/5 border border-slate-200/60 dark:border-white/10 hover:bg-white/80 dark:hover:bg-white/10 transition;
+}
+.chip-active { @apply ring-2 ring-brand-500/50 bg-white dark:bg-white/10; }
+
+.task-row {
+    @apply flex items-center justify-between gap-4 py-3 px-3 rounded-xl hover:bg-slate-50/70 dark:hover:bg-white/5 cursor-grab active:cursor-grabbing transition;
+}
+
+.check {
+    @apply size-5 rounded-md border border-slate-300 dark:border-white/20 bg-white/80 dark:bg-white/10 shadow-sm hover:border-brand-400 focus:outline-none focus:ring-4 focus:ring-brand-500/30 transition;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.check.checked {
+    @apply bg-brand-500 border-brand-500 text-white;
+}
+.check.checked::after { content: '✓'; font-weight: 800; font-size: 0.85rem; }
+
+.icon-btn { @apply px-2 py-1 rounded-md hover:bg-rose-50 dark:hover:bg-rose-500/10 text-rose-600 dark:text-rose-400 transition; }
+
+
