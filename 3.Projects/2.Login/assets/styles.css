@@ -1,0 +1,7 @@
+/* Custom tweaks on top of Tailwind (kept minimal per preference) */
+.backdrop-blur { backdrop-filter: blur(8px); }
+
+/* Improve font rendering */
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+
